@@ -166,7 +166,56 @@
                 <a href="services.html" class="block text-gray-300 hover:text-white transition-colors duration-300 font-medium py-2">Services</a>
             </div>
         </div>
-    </header>
+    </header>    <!-- Form Modal -->
+    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-gray-100 rounded-2xl border border-gray-300 w-full max-w-md max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-gray-100 border-b border-gray-300 px-8 py-6 flex items-center justify-between">
+                <h3 class="text-2xl font-bold text-gray-900">Get Started</h3>
+                <button id="closeFormBtn" class="text-gray-600 hover:text-gray-900 transition-colors duration-300" aria-label="Close form">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <form id="serviceForm" class="p-8 space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-bold mb-2 text-gray-900">Name *</label>
+                    <input type="text" id="name" name="name" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#FF5A5F] focus:ring-2 focus:ring-[#FF5A5F] focus:ring-opacity-20 transition-colors duration-300" placeholder="Your full name">
+                </div>
+                
+                <div>
+                    <label for="restaurant" class="block text-sm font-bold mb-2 text-gray-900">Restaurant/Property Name *</label>
+                    <input type="text" id="restaurant" name="restaurant" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#FF5A5F] focus:ring-2 focus:ring-[#FF5A5F] focus:ring-opacity-20 transition-colors duration-300" placeholder="Your business name">
+                </div>
+                
+                <div>
+                    <label for="address" class="block text-sm font-bold mb-2 text-gray-900">Street Address & Town *</label>
+                    <input type="text" id="address" name="address" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#FF5A5F] focus:ring-2 focus:ring-[#FF5A5F] focus:ring-opacity-20 transition-colors duration-300" placeholder="123 Main St, Los Angeles, CA">
+                </div>
+                
+                <div>
+                    <label for="phone" class="block text-sm font-bold mb-2 text-gray-900">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#FF5A5F] focus:ring-2 focus:ring-[#FF5A5F] focus:ring-opacity-20 transition-colors duration-300" placeholder="(555) 123-4567">
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-sm font-bold mb-2 text-gray-900">Email *</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#FF5A5F] focus:ring-2 focus:ring-[#FF5A5F] focus:ring-opacity-20 transition-colors duration-300" placeholder="your@email.com">
+                </div>
+                
+                <div>
+                    <label for="comments" class="block text-sm font-bold mb-2 text-gray-900">Comments or Questions</label>
+                    <textarea id="comments" name="comments" rows="4" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#FF5A5F] focus:ring-2 focus:ring-[#FF5A5F] focus:ring-opacity-20 transition-colors duration-300 resize-none" placeholder="Tell us about your needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="button-primary w-full px-6 py-3 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 shadow-lg">
+                    <span>Submit</span>
+                    <i class="fas fa-check"></i>
+                </button>
+                
+                <p class="text-xs text-gray-600 text-center">* Required fields</p>
+            </form>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-gradient py-32 md:py-40 relative overflow-hidden">
@@ -186,13 +235,13 @@
                     <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">Get Compliant Today with LA Hood Cleaning's professional, certified hood cleaning services designed to keep your business safe and fire code compliant.</p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                        <a href="https://lahoodcleaning.com" class="button-primary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 shadow-lg">
+                        <button id="openFormBtn" class="button-primary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 shadow-lg">
                             <span>Get Started Now</span>
                             <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </button>
                         <a href="tel:+1-818-423-5505" class="button-secondary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 shadow-lg">
                             <i class="fas fa-phone"></i>
-                            <span>Call Us Today</span>
+                            <span>Call Us Today (818) 423-5505</span>
                         </a>
                     </div>
                     
@@ -563,7 +612,7 @@
                     </a>
                     <a href="tel:+1-818-423-5505" class="button-secondary px-10 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center gap-2 shadow-lg">
                         <i class="fas fa-phone"></i>
-                        <span>(818) 423-5505</span>
+                        <span>Call Us Today (818) 423-5505</span>
                     </a>
                 </div>
             </div>
@@ -719,6 +768,49 @@
                     });
                 }
             });
+
+            // Form Modal Toggle
+            const formModal = document.getElementById('formModal');
+            const openFormBtn = document.getElementById('openFormBtn');
+            const closeFormBtn = document.getElementById('closeFormBtn');
+            const serviceForm = document.getElementById('serviceForm');
+            
+            if (openFormBtn && formModal && closeFormBtn) {
+                openFormBtn.addEventListener('click', () => {
+                    formModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeFormBtn.addEventListener('click', () => {
+                    formModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                formModal.addEventListener('click', (e) => {
+                    if (e.target === formModal) {
+                        formModal.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            if (serviceForm) {
+                serviceForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        restaurant: document.getElementById('restaurant').value,
+                        address: document.getElementById('address').value,
+                        comments: document.getElementById('comments').value,
+                        timestamp: new Date().toLocaleString()
+                    };
+                    console.log('Form submitted:', formData);
+                    alert('Thank you! We will contact you soon.');
+                    serviceForm.reset();
+                    formModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+            }
 
             // Smooth Scroll for Anchor Links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
